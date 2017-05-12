@@ -80,15 +80,15 @@ function pause(){
 function reset(){
     currentValue = min_date;
     playing = false;
-    $( "#slider" ).slider("value", currentValue );
+    $( "#slider" ).slider().slider("value", currentValue );
 }
 
 function playMethod(){
-	$( "#slider" ).slider();
+	
     if(playing && currentValue<=max_date)
     {
         currentValue+= play_gap;
-        $( "#slider" ).slider("value", currentValue );
+        $( "#slider" ).slider().slider("value", currentValue );
         updateChart([currentValue-gap/2,currentValue+gap/2]);
     }
     if(playing && currentValue>max_date)
